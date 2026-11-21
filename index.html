@@ -5,26 +5,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Xリスト「VRC関係のかた！」チェックレポート アーカイブ</title>
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: sans-serif; margin: 2em auto; max-width: 860px; padding: 0 1em; }
-  h1 { font-size: 1.3em; }
-  h2 { font-size: 1.1em; margin-top: 2em; }
-  table.cal { border-collapse: collapse; width: 100%; table-layout: fixed; }
-  table.cal th, table.cal td { border: 1px solid #8886; padding: 6px; vertical-align: top; height: 74px; font-size: 0.85em; }
-  table.cal th { height: auto; text-align: center; }
-  td .day { font-weight: bold; }
-  td.empty { opacity: 0.35; }
-  td.today { outline: 2px solid #4a90d9; outline-offset: -2px; }
-  .slot { display: block; margin-top: 4px; }
-  ul.list li { margin: 0.3em 0; }
-  @media (prefers-color-scheme: dark) { a { color: #8ab4f8; } }
+  :root {
+    color-scheme: light dark;
+    --bg: #f4f5fb; --panel: #ffffff; --text: #1d2130; --muted: #6b7186;
+    --line: #e2e5f1; --sat: #3b6fe0; --sun: #e0483b;
+    --am1: #ff9a3d; --am2: #ff5e7a; --pm1: #5e6bf0; --pm2: #9b5ef0;
+    --grad: linear-gradient(120deg, #5e6bf0, #9b5ef0 45%, #ff5e7a);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0e1017; --panel: #171a26; --text: #eceef6; --muted: #9aa0b5; --line: #262b3d; }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+  .hero { background: var(--grad); color: #fff; padding: 42px 20px 54px; text-align: center; }
+  .hero h1 { margin: 0; font-size: 1.65em; letter-spacing: 0.02em; text-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+  .hero p { margin: 10px 0 0; opacity: 0.92; font-size: 0.95em; }
+  .wrap { max-width: 880px; margin: -30px auto 48px; padding: 0 14px; }
+  .panel { background: var(--panel); border-radius: 18px; box-shadow: 0 10px 32px rgba(30,30,80,0.13); padding: 20px 20px 24px; margin-bottom: 26px; }
+  h2 { font-size: 1.15em; margin: 2px 0 14px; display: flex; align-items: center; gap: 8px; }
+  h2::before { content: ""; width: 10px; height: 22px; border-radius: 5px; background: var(--grad); }
+  table.cal { border-collapse: separate; border-spacing: 4px; width: 100%; table-layout: fixed; }
+  table.cal th { font-size: 0.8em; color: var(--muted); padding: 2px 0 6px; }
+  table.cal th.sat { color: var(--sat); } table.cal th.sun { color: var(--sun); }
+  table.cal td { border: 1px solid var(--line); border-radius: 12px; padding: 7px; vertical-align: top; height: 82px; font-size: 0.85em; background: var(--panel); }
+  td .day { font-weight: 700; font-size: 0.95em; }
+  td.sat .day { color: var(--sat); } td.sun .day { color: var(--sun); }
+  td.empty { opacity: 0.38; background: transparent; }
+  td.has { border-color: transparent; box-shadow: inset 0 0 0 1px var(--line), 0 3px 10px rgba(30,30,80,0.08); }
+  .slot { display: block; margin-top: 5px; padding: 3px 8px; border-radius: 999px; color: #fff !important; text-decoration: none; font-size: 0.82em; font-weight: 700; text-align: center; transition: transform 0.12s ease, box-shadow 0.12s ease; }
+  .slot:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30,30,80,0.25); }
+  .slot.am { background: linear-gradient(120deg, var(--am1), var(--am2)); }
+  .slot.pm { background: linear-gradient(120deg, var(--pm1), var(--pm2)); }
+  ul.list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+  ul.list a { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--text); font-size: 0.92em; transition: transform 0.12s ease, box-shadow 0.12s ease; }
+  ul.list a:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(30,30,80,0.15); }
+  .chip { flex: none; padding: 2px 9px; border-radius: 999px; color: #fff; font-size: 0.8em; font-weight: 700; }
+  .chip.am { background: linear-gradient(120deg, var(--am1), var(--am2)); }
+  .chip.pm { background: linear-gradient(120deg, var(--pm1), var(--pm2)); }
+  .cnt { color: var(--muted); font-size: 0.85em; }
 </style>
 </head>
 <body>
-<h1>Xリスト「VRC関係のかた！」チェックレポート アーカイブ</h1>
+<div class="hero">
+  <h1>📋 Xリスト「VRC関係のかた！」チェックレポート</h1>
+  <p>朝と夜のチェック結果アーカイブ ／ 全7レポート</p>
+</div>
+<div class="wrap">
 
+<div class="panel">
 <h2>2026年11月</h2>
-<table class="cal"><tr><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr>
+<table class="cal"><tr><th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="sat">土</th><th class="sun">日</th></tr>
 <tr>
 <td></td>
 <td></td>
@@ -32,46 +62,46 @@
 <td></td>
 <td></td>
 <td></td>
-<td class="empty"><span class="day">1</span></td>
+<td class="empty sun"><span class="day">1</span></td>
 </tr>
 <tr>
-<td class="empty"><span class="day">2</span></td>
-<td class="empty"><span class="day">3</span></td>
-<td class="empty"><span class="day">4</span></td>
-<td class="empty"><span class="day">5</span></td>
-<td class="empty"><span class="day">6</span></td>
-<td class="empty"><span class="day">7</span></td>
-<td class="empty"><span class="day">8</span></td>
+<td class="empty "><span class="day">2</span></td>
+<td class="empty "><span class="day">3</span></td>
+<td class="empty "><span class="day">4</span></td>
+<td class="empty "><span class="day">5</span></td>
+<td class="empty "><span class="day">6</span></td>
+<td class="empty sat"><span class="day">7</span></td>
+<td class="empty sun"><span class="day">8</span></td>
 </tr>
 <tr>
-<td class="empty"><span class="day">9</span></td>
-<td class="empty"><span class="day">10</span></td>
-<td class="empty"><span class="day">11</span></td>
-<td class="empty"><span class="day">12</span></td>
-<td class="empty"><span class="day">13</span></td>
-<td class="empty"><span class="day">14</span></td>
-<td class="empty"><span class="day">15</span></td>
+<td class="empty "><span class="day">9</span></td>
+<td class="empty "><span class="day">10</span></td>
+<td class="empty "><span class="day">11</span></td>
+<td class="empty "><span class="day">12</span></td>
+<td class="empty "><span class="day">13</span></td>
+<td class="empty sat"><span class="day">14</span></td>
+<td class="empty sun"><span class="day">15</span></td>
 </tr>
 <tr>
-<td class="empty"><span class="day">16</span></td>
-<td class="empty"><span class="day">17</span></td>
-<td><span class="day">18</span><a class="slot" href="report-2026-11-18-night.html">夜 18件</a></td>
-<td><span class="day">19</span><a class="slot" href="report-2026-11-19-morning.html">朝 6件</a><a class="slot" href="report-2026-11-19-night.html">夜 6件</a></td>
-<td><span class="day">20</span><a class="slot" href="report-2026-11-20-morning.html">朝 24件</a><a class="slot" href="report-2026-11-20-night.html">夜 10件</a></td>
-<td><span class="day">21</span><a class="slot" href="report-2026-11-21-morning.html">朝 12件</a><a class="slot" href="report-2026-11-21-night.html">夜 43件</a></td>
-<td class="empty"><span class="day">22</span></td>
+<td class="empty "><span class="day">16</span></td>
+<td class="empty "><span class="day">17</span></td>
+<td class="has "><span class="day">18</span><a class="slot pm" href="report-2026-11-18-night.html">夜 18件</a></td>
+<td class="has "><span class="day">19</span><a class="slot am" href="report-2026-11-19-morning.html">朝 6件</a><a class="slot pm" href="report-2026-11-19-night.html">夜 6件</a></td>
+<td class="has "><span class="day">20</span><a class="slot am" href="report-2026-11-20-morning.html">朝 24件</a><a class="slot pm" href="report-2026-11-20-night.html">夜 10件</a></td>
+<td class="has sat"><span class="day">21</span><a class="slot am" href="report-2026-11-21-morning.html">朝 12件</a><a class="slot pm" href="report-2026-11-21-night.html">夜 43件</a></td>
+<td class="empty sun"><span class="day">22</span></td>
 </tr>
 <tr>
-<td class="empty"><span class="day">23</span></td>
-<td class="empty"><span class="day">24</span></td>
-<td class="empty"><span class="day">25</span></td>
-<td class="empty"><span class="day">26</span></td>
-<td class="empty"><span class="day">27</span></td>
-<td class="empty"><span class="day">28</span></td>
-<td class="empty"><span class="day">29</span></td>
+<td class="empty "><span class="day">23</span></td>
+<td class="empty "><span class="day">24</span></td>
+<td class="empty "><span class="day">25</span></td>
+<td class="empty "><span class="day">26</span></td>
+<td class="empty "><span class="day">27</span></td>
+<td class="empty sat"><span class="day">28</span></td>
+<td class="empty sun"><span class="day">29</span></td>
 </tr>
 <tr>
-<td class="empty"><span class="day">30</span></td>
+<td class="empty "><span class="day">30</span></td>
 <td></td>
 <td></td>
 <td></td>
@@ -79,13 +109,13 @@
 <td></td>
 <td></td>
 </tr>
-</table>
-<h2>レポート一覧（新しい順）</h2><ul class="list">
-<li><a href="report-2026-11-21-night.html">2026-11-21 夜（43件）</a></li>
-<li><a href="report-2026-11-21-morning.html">2026-11-21 朝（12件）</a></li>
-<li><a href="report-2026-11-20-night.html">2026-11-20 夜（10件）</a></li>
-<li><a href="report-2026-11-20-morning.html">2026-11-20 朝（24件）</a></li>
-<li><a href="report-2026-11-19-night.html">2026-11-19 夜（6件）</a></li>
-<li><a href="report-2026-11-19-morning.html">2026-11-19 朝（6件）</a></li>
-<li><a href="report-2026-11-18-night.html">2026-11-18 夜（18件）</a></li>
-</ul></body></html>
+</table></div>
+<div class="panel"><h2>レポート一覧（新しい順）</h2><ul class="list">
+<li><a href="report-2026-11-21-night.html"><span>2026-11-21</span><span class="chip pm">夜</span><span class="cnt">43件</span></a></li>
+<li><a href="report-2026-11-21-morning.html"><span>2026-11-21</span><span class="chip am">朝</span><span class="cnt">12件</span></a></li>
+<li><a href="report-2026-11-20-night.html"><span>2026-11-20</span><span class="chip pm">夜</span><span class="cnt">10件</span></a></li>
+<li><a href="report-2026-11-20-morning.html"><span>2026-11-20</span><span class="chip am">朝</span><span class="cnt">24件</span></a></li>
+<li><a href="report-2026-11-19-night.html"><span>2026-11-19</span><span class="chip pm">夜</span><span class="cnt">6件</span></a></li>
+<li><a href="report-2026-11-19-morning.html"><span>2026-11-19</span><span class="chip am">朝</span><span class="cnt">6件</span></a></li>
+<li><a href="report-2026-11-18-night.html"><span>2026-11-18</span><span class="chip pm">夜</span><span class="cnt">18件</span></a></li>
+</ul></div></div></body></html>
