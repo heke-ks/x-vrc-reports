@@ -36,17 +36,23 @@ h2{font-size:16px;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
 <style>
 /* section heading emphasis (added 2026-11-21) */
 h2{
+  --cat:#868e96;
   font-size:20px !important; font-weight:900; letter-spacing:.04em;
   margin:36px 0 14px !important; padding:11px 14px;
-  background:#18181b; color:#fff !important;
+  color:#1d2130 !important;
+  background:rgba(128,128,128,.10);
+  background:linear-gradient(90deg, color-mix(in srgb, var(--cat) 30%, transparent), color-mix(in srgb, var(--cat) 6%, transparent));
   border:none !important; border-radius:6px;
   position:sticky; top:8px; z-index:20;
-  box-shadow:0 4px 14px rgba(0,0,0,.28);
+  box-shadow:0 2px 8px rgba(20,20,50,.10);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
 }
-h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800; }
+h2.cat-booth{--cat:#e8590c} h2.cat-sale{--cat:#d6336c} h2.cat-event{--cat:#1971c2}
+h2.cat-world{--cat:#2f9e44} h2.cat-art{--cat:#7048e8} h2.cat-photo{--cat:#1098ad}
+h2 .count{ color:var(--cat) !important; font-size:15px !important; font-weight:800; }
 @media (prefers-color-scheme: dark){
-  h2{ background:#f2f2f4; color:#141417 !important; }
-  h2 .count{ color:#b34700 !important; }
+  h2{ color:#f2f2f4 !important;
+      background:linear-gradient(90deg, color-mix(in srgb, var(--cat) 42%, transparent), color-mix(in srgb, var(--cat) 10%, transparent)); }
 }
 </style>
 </head>
@@ -55,7 +61,7 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
 <div class="wrap">
 <h1>VRC WATCH｜2026-11-21 夜レポート</h1>
 <p class="note">2026-11-21（土）18:07 JST実施・43件（BOOTH・新商品14件／BOOTH・セール5件／イベント11件／ワールド8件／イラスト1件／写真4件）。目印の投稿（2026-11-21 02:37、VRCプロムン改変集会）には到達できず、02:37より新しい投稿で表示されなかったものが他にもある可能性があります。URL未確認で落とした候補はありません。</p>
-<h2><span class="dot" style="background:#e8590c"></span>BOOTH・新商品（14件）</h2>
+<h2 class="cat-booth"><span class="dot" style="background:#e8590c"></span>BOOTH・新商品（14件）</h2>
 <div class="grid">
 <a class="card" href="https://x.com/chamm_vrc/status/2124067892291637526" target="_blank" rel="noopener">
   <div class="head"><img class="avatar" src="https://pbs.twimg.com/profile_images/1978302712988282880/mbI3qKAR_200x200.jpg" alt=""><div class="who"><div class="name">ちゃむ</div><div class="handle">@chamm_vrc · 2026-11-21 18:10 · ♥26</div></div><span class="badge" style="background:#e8590c">BOOTH・新商品</span></div>
@@ -127,7 +133,7 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
   <div class="thumb"><img src="https://pbs.twimg.com/media/HXZS0NxbkAAl-Zj.jpg?name=small" alt="" loading="lazy"></div>
   <p class="summary">新作の男女ペア衣装「Knead 503」を11月20日に発売予定、発売記念で抽選3名にFULLをプレゼントとの告知。リストメンバーによるリポスト経由。</p>
 </a>
-</div><h2><span class="dot" style="background:#d6336c"></span>BOOTH・セール（5件）</h2>
+</div><h2 class="cat-sale"><span class="dot" style="background:#d6336c"></span>BOOTH・セール（5件）</h2>
 <div class="grid">
 <a class="card" href="https://x.com/MBsh0p/status/2124042072193982900" target="_blank" rel="noopener">
   <div class="head"><img class="avatar" src="https://pbs.twimg.com/profile_images/1896465408825397248/poXXCZ8J_200x200.jpg" alt=""><div class="who"><div class="name">MBSHOP</div><div class="handle">@MBsh0p · 2026-11-21 16:27 · ♥151</div></div><span class="badge" style="background:#d6336c">BOOTH・セール</span></div>
@@ -154,7 +160,7 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
   <div class="thumb"><img src="https://pbs.twimg.com/media/HXebVPbbgAAIv2D.jpg?name=small" alt="" loading="lazy"></div>
   <p class="summary">BLACK FRIDAY PACK 全2種、最初の48時間限定84% OFF・¥2,990、11/19〜12/7は全ショップ衣装50% OFFとのセール告知。リストメンバーによるリポスト経由。</p>
 </a>
-</div><h2><span class="dot" style="background:#1971c2"></span>イベント（11件）</h2>
+</div><h2 class="cat-event"><span class="dot" style="background:#1971c2"></span>イベント（11件）</h2>
 <div class="grid">
 <a class="card" href="https://x.com/mamefriendsMeet/status/2124066537245905182" target="_blank" rel="noopener">
   <div class="head"><img class="avatar" src="https://pbs.twimg.com/profile_images/1865956022403354624/tkSHuHKD_200x200.jpg" alt=""><div class="who"><div class="name">まめふれんず交流会</div><div class="handle">@mamefriendsMeet · 2026-11-21 18:05 · ♥1</div></div><span class="badge" style="background:#1971c2">イベント</span></div>
@@ -211,7 +217,7 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
   <div class="thumb"><img src="https://pbs.twimg.com/media/HW1bkiYbMAAiZNP.jpg?name=small" alt="" loading="lazy"></div>
   <p class="summary">11月21日（土）にtrusie集会を開催（23時〜24時頃、trusieグループ＋、サンプルアバターでも参加可）との告知。リストメンバーによるリポスト経由で本日タイムラインに表示された。</p>
 </a>
-</div><h2><span class="dot" style="background:#2f9e44"></span>ワールド（8件）</h2>
+</div><h2 class="cat-world"><span class="dot" style="background:#2f9e44"></span>ワールド（8件）</h2>
 <div class="grid">
 <a class="card" href="https://x.com/komachi_vrchat/status/2124046614025372010" target="_blank" rel="noopener">
   <div class="head"><img class="avatar" src="https://pbs.twimg.com/profile_images/1816879985543774209/8wx0Yi11_200x200.jpg" alt=""><div class="who"><div class="name">秋月小町(komachi.akizuki)</div><div class="handle">@komachi_vrchat · 2026-11-21 16:45 · ♥4</div></div><span class="badge" style="background:#2f9e44">ワールド</span></div>
@@ -253,14 +259,14 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
   <div class="thumb"><img src="https://pbs.twimg.com/amplify_video_thumb/2123616290896257024/img/1SjgdSNoH0g7nZ9a.jpg" alt="" loading="lazy"><span class="video-badge">▶ 動画</span></div>
   <p class="summary">ピクシブとVRChatの共同リリースワールド「アバター×着せ替えチュートリアル」が本日公開とのワールド紹介。リストメンバーによるリポスト経由。</p>
 </a>
-</div><h2><span class="dot" style="background:#7048e8"></span>イラスト（1件）</h2>
+</div><h2 class="cat-art"><span class="dot" style="background:#7048e8"></span>イラスト（1件）</h2>
 <div class="grid">
 <a class="card" href="https://x.com/koharunru_n/status/2123611553916493949" target="_blank" rel="noopener">
   <div class="head"><img class="avatar" src="https://pbs.twimg.com/profile_images/1588108366554968064/aAc1Tw1p_200x200.jpg" alt=""><div class="who"><div class="name">こはるちゃんやよっ＠ニコ生主</div><div class="handle">@koharunru_n · 2026-11-20 11:57 · ♥6351</div></div><span class="badge" style="background:#7048e8">イラスト</span></div>
   <div class="thumb"><img src="https://pbs.twimg.com/media/HXiVc6fbsAAsvyE.jpg?name=small" alt="" loading="lazy"></div>
   <p class="summary">モデリングされる気満々の３面図のイラスト投稿。</p>
 </a>
-</div><h2><span class="dot" style="background:#1098ad"></span>写真（4件）</h2>
+</div><h2 class="cat-photo"><span class="dot" style="background:#1098ad"></span>写真（4件）</h2>
 <div class="grid">
 <a class="card" href="https://x.com/inunokaicyou/status/2124041302480388248" target="_blank" rel="noopener">
   <div class="head"><img class="avatar" src="https://pbs.twimg.com/profile_images/1454941670072815616/JNvN2wM0_200x200.jpg" alt=""><div class="who"><div class="name">犬の会長</div><div class="handle">@inunokaicyou · 2026-11-21 16:24 · ♥185</div></div><span class="badge" style="background:#1098ad">写真</span></div>
