@@ -54,17 +54,23 @@
 <style>
 /* section heading emphasis (added 2026-11-21) */
 h2{
+  --cat:#868e96;
   font-size:20px !important; font-weight:900; letter-spacing:.04em;
   margin:36px 0 14px !important; padding:11px 14px;
-  background:#18181b; color:#fff !important;
+  color:#1d2130 !important;
+  background:rgba(128,128,128,.10);
+  background:linear-gradient(90deg, color-mix(in srgb, var(--cat) 30%, transparent), color-mix(in srgb, var(--cat) 6%, transparent));
   border:none !important; border-radius:6px;
   position:sticky; top:8px; z-index:20;
-  box-shadow:0 4px 14px rgba(0,0,0,.28);
+  box-shadow:0 2px 8px rgba(20,20,50,.10);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
 }
-h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800; }
+h2.cat-booth{--cat:#e8590c} h2.cat-sale{--cat:#d6336c} h2.cat-event{--cat:#1971c2}
+h2.cat-world{--cat:#2f9e44} h2.cat-art{--cat:#7048e8} h2.cat-photo{--cat:#1098ad}
+h2 .count{ color:var(--cat) !important; font-size:15px !important; font-weight:800; }
 @media (prefers-color-scheme: dark){
-  h2{ background:#f2f2f4; color:#141417 !important; }
-  h2 .count{ color:#b34700 !important; }
+  h2{ color:#f2f2f4 !important;
+      background:linear-gradient(90deg, color-mix(in srgb, var(--cat) 42%, transparent), color-mix(in srgb, var(--cat) 10%, transparent)); }
 }
 </style>
 </head>
@@ -76,7 +82,7 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
     <p>2026-11-18 18:07〜18:32 JST／該当18件。アイコン・サムネイル付き。サムネイルの高さはCSSで160pxに指定しています（値は自由に変更可）。カードをタップすると元の投稿が開きます。</p>
   </header>
 
-  <h2>イベント <span class="count">5件</span></h2>
+  <h2 class="cat-event">イベント <span class="count">5件</span></h2>
   <div class="grid">
     <div class="card"><a href="https://x.com/komachi_vrchat/status/2122979173212012705" target="_blank" rel="noopener">
       <div class="card-body">
@@ -110,7 +116,7 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
       </div></a></div>
   </div>
 
-  <h2>BOOTH <span class="count">11件</span></h2>
+  <h2 class="cat-booth">BOOTH <span class="count">11件</span></h2>
   <div class="grid">
     <div class="card"><a href="https://x.com/Lovace_3D/status/2122970832276529281" target="_blank" rel="noopener">
       <div class="card-body">
@@ -190,7 +196,7 @@ h2 .count{ color:#ffd166 !important; font-size:15px !important; font-weight:800;
       </div></a></div>
   </div>
 
-  <h2>写真 <span class="count">1件</span></h2>
+  <h2 class="cat-photo">写真 <span class="count">1件</span></h2>
   <div class="grid">
     <div class="card"><a href="https://x.com/mococo820/status/2122858418117689702" target="_blank" rel="noopener">
       <div class="card-body">
