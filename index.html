@@ -11,13 +11,13 @@
     color-scheme: light dark;
     --bg: #f4f4f6; --panel: #fbfbfc; --text: #18181b; --muted: #8a8a93;
     --line: #e0e0e5; --line-strong: #18181b;
-    --am: #e85d26; --pm: #5a4bd1; --sat: #2f62c4; --sun: #d23c2e;
+    --am: #e85d26; --pm: #5a4bd1; --sat: #2f62c4; --sun: #d23c2e; --ex: #0b8a64;
     --grad: linear-gradient(90deg, #5e6bf0, #9b5ef0 45%, #ff5e7a, #ff9a3d);
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #101013; --panel: #16161a; --text: #f2f2f4; --muted: #83838d;
             --line: #26262c; --line-strong: #f2f2f4;
-            --am: #ff8a50; --pm: #9d8fff; --sat: #6f9bef; --sun: #ff7a6b; }
+            --am: #ff8a50; --pm: #9d8fff; --sat: #6f9bef; --sun: #ff7a6b; --ex: #45d3a5; }
   }
   * { box-sizing: border-box; }
   body { font-family: "Hiragino Sans", "Noto Sans JP", -apple-system, sans-serif;
@@ -53,6 +53,7 @@
   .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
   ul.list li.am { border-left: 3px solid var(--am); }
   ul.list li.pm { border-left: 3px solid var(--pm); }
+  ul.list li.ex { border-left: 3px solid var(--ex); }
   ul.list li a { padding-left: 12px; }
   .day.pad { opacity: 0; }
   .slots { display: flex; gap: 5px; margin-top: 8px; flex-wrap: wrap; }
@@ -64,8 +65,10 @@
   .slot .unit { font-size: 0.8em; opacity: 0.7; }
   .slot.am { color: var(--am); border-color: var(--am); }
   .slot.pm { color: var(--pm); border-color: var(--pm); }
+  .slot.ex { color: var(--ex); border-color: var(--ex); }
   .slot.am:hover { background: var(--am); color: #fff; }
   .slot.pm:hover { background: var(--pm); color: #fff; }
+  .slot.ex:hover { background: var(--ex); color: #fff; }
 
   /* list */
   ul.list { list-style: none; margin: 0; padding: 0; }
@@ -80,6 +83,7 @@
   .ltag .unit { font-size: 0.82em; opacity: 0.7; }
   .ltag.am { color: var(--am); border-color: var(--am); }
   .ltag.pm { color: var(--pm); border-color: var(--pm); }
+  .ltag.ex { color: var(--ex); border-color: var(--ex); }
 
   /* mobile: 2-column day cards */
   @media (max-width: 767px) {
@@ -101,7 +105,7 @@
 <header>
   <div class="kicker num">MORNING &amp; NIGHT — X LIST CHECK</div>
   <h1>VRC WATCH</h1>
-  <p>朝と夜のリストチェック ／ Xリスト「VRC関係のかた！」のレポートアーカイブ<span class="tag">全8レポート</span></p>
+  <p>朝と夜のリストチェック ／ Xリスト「VRC関係のかた！」のレポートアーカイブ<span class="tag">全9レポート</span></p>
 </header>
 <div class="wrap">
 
@@ -138,7 +142,7 @@
 <div class="cal-week">
 <div class="day has sun"><span class="dnum num">22</span><span class="wen num">SUN</span><div class="slots"><a class="slot am" href="report-2026-11-22-morning.html"><span class="lab">朝</span><span class="cnt num">22</span><span class="unit">件</span></a></div></div>
 <div class="day empty "><span class="dnum num">23</span><span class="wen num">MON</span></div>
-<div class="day empty "><span class="dnum num">24</span><span class="wen num">TUE</span></div>
+<div class="day has "><span class="dnum num">24</span><span class="wen num">TUE</span><div class="slots"><a class="slot ex" href="report-2026-11-24-extra.html"><span class="lab">特別</span><span class="cnt num">33</span><span class="unit">件</span></a></div></div>
 <div class="day empty "><span class="dnum num">25</span><span class="wen num">WED</span></div>
 <div class="day empty "><span class="dnum num">26</span><span class="wen num">THU</span></div>
 <div class="day empty "><span class="dnum num">27</span><span class="wen num">FRI</span></div>
@@ -155,6 +159,7 @@
 </div>
 </div></section>
 <section><h2>レポート一覧 — 新しい順</h2><ul class="list">
+<li class="ex"><a href="report-2026-11-24-extra.html"><span class="ldate num">2026-11-24</span><span class="ldow num">TUE</span><span class="ltag ex">特別<span class="cnt num">33</span><span class="unit">件</span></span></a></li>
 <li class="am"><a href="report-2026-11-22-morning.html"><span class="ldate num">2026-11-22</span><span class="ldow num">SUN</span><span class="ltag am">朝<span class="cnt num">22</span><span class="unit">件</span></span></a></li>
 <li class="pm"><a href="report-2026-11-21-night.html"><span class="ldate num">2026-11-21</span><span class="ldow num">SAT</span><span class="ltag pm">夜<span class="cnt num">43</span><span class="unit">件</span></span></a></li>
 <li class="am"><a href="report-2026-11-21-morning.html"><span class="ldate num">2026-11-21</span><span class="ldow num">SAT</span><span class="ltag am">朝<span class="cnt num">12</span><span class="unit">件</span></span></a></li>
